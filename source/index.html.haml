@@ -1,0 +1,46 @@
+---
+title: "ReppertFactor : About"
+selected_main_nav: "index"
+---
+- content_for :bluebar do
+  .media.media-about
+    .media-body
+      %h1.media-heading High Quality IT for Small Business
+      .tagline We help businesses cut costs and run more efficiently.
+      %a.splash-button{href: url_for("services.html")} Learn More &rarr;
+      %a.splash-button{href: url_for("contact.html")} Contact Us &rarr;
+    .media-right.media-object.media-middle.image-switchers
+      = image_tag "1.png", id: "switch-me"
+      %center
+        - 4.times do |t|
+          %a.switcher(href="#")= t+1
+
+.splash-content-table
+  .row
+    .col-md-6
+      %h1(style="font-size: 30px; font-weight: normal") What is ReppertFactor?
+      %h2(style="font-size: 1.5em; font-weight: bold") ReppertFactor helps companies and individuals get the most out of their computers and networks.
+
+      %p It doesn't matter if you're a small business owner, employee or executive of a large company, or a parent looking to make your home computer safe. ReppertFactor can help you succeed.
+
+      %p Over the past 10 years we have advised companies in technology purchases, created corporate networks, implemented email systems and cleaned viruses and spyware off of countless computers.
+
+    .col-md-6.servings
+      %h1 Who We Serve
+      .serving.serving-individuals
+        = image_tag "serving-individuals.png", class: "serving-img", width: "131", height: "101", style: "float: left; padding-right: 2em", alt: ""
+        %h2= link_to "Home", "#"
+        Keep your home humming. Let one of our experts configure your computer so you won't catch a <b>virus</b> or <b>spyware infestation</b>. Already have a bug? Give us a call.
+        %br
+        %div(style="text-align:right")
+          = link_to image_tag("more.png"), "services.html"
+
+      .serving.serving-business
+        = image_tag "serving-business.png", class: "serving-img", width: "131", height: "101", style: "float: right; padding-left: 2em", alt: ""
+        %h2= link_to "Business", "#"
+        The right IT solution can save you <b>time</b>, cut your <b>costs</b>, increase <b>revenue</b>, and improve your <b>professional image</b>. We bring the expertise and the experience. Don't get left behind!
+        %br
+        %div(style="text-align:right")
+          = link_to image_tag("more.png"), "services.html"
+
+

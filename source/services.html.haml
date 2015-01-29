@@ -1,0 +1,109 @@
+---
+title: ReppertFactor Services
+selected_main_nav: "services"
+business:
+  headline: Focus on what matters. We can handle the tech.
+  blockquote:
+    - Supplement your in-house IT with our techs and technology strategists
+    - Claim your competitive advantage
+  bullets:
+    -
+      - lock
+      - "Security Strategy and Procedures"
+      -
+        - "In today's world, you need to mitigate persistent threats and always have a recovery plan in place"
+        - "Comprehensive security audits give you peace of mind"
+    -
+      - gift
+      - "Home-Grown User-Friendly Tools"
+      -
+        - "RF's custom made utilities that make your employees' lives easier"
+        - "Take the frustration, tedium, and guess work out of daily operations"
+    -
+      - cloud
+      - "Cloud Services and Virtual Servers"
+      -
+        - "Let us shoulder the weight of your servers"
+        - "We host it and keep it running smooth"
+        - "Consolidate existing servers and eliminate intermittant issues"
+    -
+      - hdd
+      - "Share, Manage, and Backup"
+      -
+        - "Your data is your most important irreplacable asset. We can help you move files around the office easily"
+    -
+      - wrench
+      - Server Tools
+      -
+        - "Built to let you know exactly what's going on at a glance"
+        - "Exhaustive analytics give valuable insight into operations"
+    -
+      - flash
+      - Improve Your Network
+      -
+        - "Fix slowdowns, take advantage of distributed resources, communicate more efficiently"
+        - "We can overhaul or build out your corporate network to fit your needs"
+home:
+  headline: "Personal computing can be a headache."
+  blockquote:
+    - "Let us get you back on track and make technology work for you again"
+    - "Our friendly, knowledgable techs fix, explain, and upgrade"
+  bullets:
+    -
+      - "warning-sign"
+      - "Viruses and Spyware"
+      -
+        - "Today's attacks are more advanced than ever, you need someone on your side"
+        - "Custom suite of battle tested scanners and monitoring tools"
+        - "We can fix things before they get nasty and clean up any infections"
+    -
+      - signal
+      - "WiFi Everywhere"
+      -
+        - "Can't get online in the kitchen, basement or on the patio?"
+        - "Let us design a WiFi network that is fast and ubiquitious"
+    -
+      - hdd
+      - "New Computers and Electronics"
+      -
+        - "We wade through all the new innovations and find the ones that work for you"
+        - "Let our wisdom aide your upgrade decisions"
+---
+- content_for :bluebar do
+  .media
+    .media-body
+      %h1.media-heading Technology Changes Fast.
+      %br/
+      %span.tagline Give your office the IT prowess of the big guys.
+    .media-right.media-object.media-middle
+      %a.splash-button.media-right{href: url_for("contact.html")} Contact us &rarr;
+
+%div(role="tabpanel")
+  %ul.nav.nav-tabs(role="tablist")
+    %li.active.tabtext.Volkhorn
+      %a(href="#business" aria-controls="business" role="tab" data-toggle="tab") Business
+    %li.tabtext.Volkhorn
+      %a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Home
+
+  .services-tab-content
+    - %w(business home).each_with_index do |type, index|
+      - current_page.data.send(type).tap do |tab_content|
+        .tab-pane{role: "tabpanel", class: index == 0 ? "active" : "inactive", id: type}
+          %h2.tabtop= tab_content.headline
+          %blockquote
+            - tab_content.blockquote.each do |quote|
+              %p= quote
+          .glyphtable
+            - tab_content.bullets.each do |glyph, glyphtext, glyphsubtexts|
+              .row
+                .col-md-1
+                  %span.glarge{class: "glyphicon-#{glyph}"}
+                .col-md-10.desc-container
+                  .heading= glyphtext
+                  - glyphsubtexts.each do |subtext|
+                    .desc
+                      .row
+                        .col-md-1.noPad.text-right
+                          %span.glyphicon.gsmall.glyphicon-chevron-right
+                        .col-md-11= subtext
+

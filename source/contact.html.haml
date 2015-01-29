@@ -1,0 +1,57 @@
+---
+title: ReppertFactor Contact
+selected_main_nav: "contact"
+---
+- content_for :bluebar do
+  .media
+    .media-body
+      %h1.media-heading Let Us Handle It
+      %br
+      %span.tagline Be ahead of the curve. Choose RF.
+
+.contact-table
+  .row
+    .left
+      %span.glarge.glyphicon-phone
+    .right
+      .heading Give us a ring.
+      .desc
+        %table.phone-table
+          %tr
+            %th Sales:
+            %td 215-945-8869 x1
+          %tr
+            %th Billing:
+            %td 215-945-8869 x2
+          %tr
+            %th Support:
+            %td 215-945-8869 x1
+  .row
+    .left
+      %span.glarge.glyphicon-pencil
+    .right
+      .heading Drop us a line
+      .desc
+        <a href="#" style="width: 10em; text-align: center; display: block; margin: 1px; padding: 1em; border: 1px solid black">Online Contact Form</a>
+  .row
+    .left
+      %span.glarge.glyphicon-comment
+    .right
+      .heading Connect with us
+      .desc
+        #fb-root
+        :javascript
+          (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=74219359114&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        .fb-like-box{data: {href: "https://www.facebook.com/ReppertFactor", colorscheme: "light", "show-faces" => "false", header: "false", stream: "false", "show-border" => "false"}}
+        %br/
+        %a.twitter-follow-button{href: "https://twitter.com/ReppertFactor", data: {"show-count" => false}}
+        :javascript
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+
